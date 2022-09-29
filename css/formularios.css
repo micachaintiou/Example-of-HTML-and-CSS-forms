@@ -1,0 +1,50 @@
+html{
+    height: 100%; /* Esto es para que el archivo html ocupe el 100% */
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(#dbb796, #fffff9); /* es un degradado lineal */
+}
+
+.contenedor{
+    margin: 50px auto;
+    width: 400px;
+    padding: 30px; /* Todo esto es para centrarlo */
+    background: rgba(0, 0, 0, 0.4); /* Transparencia */
+    border-radius: 10%; /* Para redondear las esquinas */
+
+}
+
+.contenedor h2{
+    margin: 0 0 30px;
+    padding: 0;
+    font-size: 30px;
+    color: #f07167;
+    text-align: center;
+}
+
+.contenedor .elemento label{ /* Para que solo se modifique los elementos que estan dentro de contenedor, elemento, label */
+    color: white;
+}
+
+.contenedor .elemento input{
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+    background: transparent;
+    border: none; /* saca los bordes de la caja de texto */
+    border-bottom: 1px solid white; /* es para poner una linea abajo */
+    margin-bottom: 30px;
+}
+
+.contenedor .elemento input[type="submit"]{ /* aplica a los botones submit solamente */
+    background-color: #00afb9;
+    border: none;
+    letter-spacing: 5px;/* separa las letras */
+    text-transform: uppercase; /* para que se ponga todo el texto en mayuscula */
+    cursor: pointer; /* para que cuando acerque el cursor aparezca como para presionar */
+    padding: 15px;
+    margin-top: 30px;
+}

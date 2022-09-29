@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios en HTML</title>
+</head>
+<body>
+    <h1>Formularios en HTML</h1>
+    <form method="post" action="mi_servidor" target="_self" autocomplete="off"> <!-- Para hacer formularios, si le pongo el metodo post no se va a visualizar cuando se envie, sirve para cuando hay que escribir algo confidencial, accion sirve para poner un nombre en la url y que se mande ahi la informacion, self es para que se cargue en la misma ventana, esta por default esa opcion, autocomplete es para activar o desactivar las sugerencias -->
+        <fieldset> <!-- fildset es para agregar un marco -->
+            <legend>Datos Persona:</legend> <!-- Sirve para poner como un "titulo" que esta en el marco -->
+
+            <label for="idPersona">Persona:</label> <br/>
+            <input type="text" id="idPersona" name="idPersona" readonly value="100" disabled/> <br/> <!-- Es informacion de solo lectura, el usuario no lo puede modificar, disabled sirve para desactivar el elemento -->
+
+            <input type="hidden" id="sistema" name="sistema" value="SAP"> <!-- El usuario no va a poder ver esto pero si se va a mandar al servidor -->
+
+            <label for="nombre">Nombre:</label> <br/> <!-- Para indicarle al usuario que tiene que escribir, el for es para relacionar la etiqueta label con la de input y capte la informacion de esa caja   -->
+            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required="true"/> <br/>
+    <!-- requiered es para obligar al usuariro que complete ese campo, si es true es porque va a ser requerido y si es false es porque no lo va a ser -->
+    <!-- placeholder es para que el usuario sepa que tiene que agregar -->
+    <!-- type: text significa que es informacion de tipo texto, el id es para decir que va a ir en ese texto -->
+    <!-- name sirve para especificar lo que se va a enviar -->
+            <label for="email">Email:</label> <br/>
+            <input type="email" id="email" name="email" placeholder="Escribre tu email"/> <br/>
+
+            <label for="password">Password:</label> <br/>
+            <input type="password" id="password" name="password" placeholder="Escribre tu contraseña"/> <br/>
+
+            <label for="edad">Edad:</label> <br/>
+            <input type="number" id="edad" name="edad" step="any" placeholder="Escribre tu edad"/> <br/>
+
+            <label for="apellido">Apellido:</label> <br/>
+            <input type="text" id="apellido" name="apellido" placeholder="Escribre tu apellido"/> <br/> <!-- step:any es para que tambien acepte numeros flotantes -->
+
+            <label>Genero:</label><br/>
+            <input type="radio" id="femenino" name="genero" value="femenino"/>
+            <label for="femenino">Femenino</label><br/>
+
+            <input type="radio" id="masculino" name="genero" value="masculino">
+            <label for="masculino">Masculino</label><br/>
+    <!-- Para que solamente se pueda seleccionar una opcion hay que poner lo mismo en name en todas las opciones -->
+    <!-- En radios se puede poner una opcion y en checkbox varias -->
+            <label>Genero de musica favorita</label><br/>
+            <input type="checkbox" id="clasica" name="musica" value="clasica">
+            <label for="clasica">Clasica</label><br/>
+
+            <input type="checkbox" id="jazz" name="musica" value="jazz">
+            <label for="jazz">Jazz</label><br/>
+
+            <label for="autos">Marca auto favorita</label><br/>
+            <select name="autos" id="autos" multiple> <!-- para poder seleccionar mas opciones va multiple -->
+                <option value="volvo">Volvo</option>
+                <option value="bmw">BMW</option>
+                <option value="audi" selected>Audi</option> <!-- Sirve para que el usuario seleccione una opcion de las que le de, el selected sirve para que aparezca primero esa opcion -->
+            </select><br/>
+
+            <label for="comentario">Comentario</label><br/>
+            <textarea name="comentario" id="comentario" cols="30" rows="2"
+            ></textarea> <!-- Para abrir un text area, cols rs columnas y rows renglones -->
+            <br/>
+
+            <input type="submit" value="Enviar"/> <!-- submit es para hacer un boton que va a enviar la informacion que escriba, value es para poner el nombre que queremos que vaya en el boton -->
+        <input type="submit" formnovalidate value="Enviar sin validar"> <!-- Para que no se value lo que se manda, es decir si estaba como obligatorio el nombre, no pongo nada y apreto este boton no va a marcar que tiene que agregar algun valor  -->
+        <input type="reset" value="Restablecer">
+    </fieldset>
+    </form>
+</body>
+</html>
+
+<!-- <input type="text" id="nombre" name="nombre" value="Nombre"/> -->
+<!-- Value sirve para ya proporcionar una informacion para que este en la caja -->
+<!-- query string: el parametro que enviamos -->
