@@ -47,4 +47,10 @@ body{
     cursor: pointer; /* para que cuando acerque el cursor aparezca como para presionar */
     padding: 15px;
     margin-top: 30px;
+    transform: scale(1) rotate(0);
+    transition: transform 750ms ease-in-out 0s;
+}
+
+.contenedor .elemento input[type="submit"]:is(:hover, :focus){
+    transform: scale(1.0) rotate(3deg);
 }
